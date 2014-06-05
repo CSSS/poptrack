@@ -1,0 +1,16 @@
+
+{% if stock %}
+
+<table>
+<tr>
+<th>Pop</th>
+<th>Stock</th>
+</tr>
+ {% for f in stock %}
+  <tr>
+   <td>{{f.name}}</td>
+   <td>{{f.stock}}</td>
+  </tr>
+ {% endfor %}
+</table>
+{% endif %}

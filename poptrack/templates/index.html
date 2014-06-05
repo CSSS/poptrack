@@ -1,0 +1,21 @@
+welcome to poptrack
+
+{% if object_list %}
+
+<table>
+<tr>
+<th>Pop</th>
+<th>Column</th>
+<th>Amount</th>
+<th>When</th>
+</tr>
+ {% for f in object_list %}
+  <tr>
+   <td>{{f.pop}}</td>
+   <td>{{f.column}}</td>
+   <td>{{f.amount}}</td>
+   <td>{{f.time}}</td>
+  </tr>
+ {% endfor %}
+</table>
+{% endif %}
