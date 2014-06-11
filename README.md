@@ -34,7 +34,6 @@ As she is often not in the office, it's best to call her cell.
 ### How much?
 Depends on the week. Max capacity in the cabinet is:
 
-```
 | Pop Name   | Amount |
 | ---------- | ------ |
 | Coke       | 8      |
@@ -51,4 +50,3 @@ Depends on the week. Max capacity in the cabinet is:
 | Overflow   | 5      |
 | ---------- | ------ |
 | Water      | 4      |
-```
