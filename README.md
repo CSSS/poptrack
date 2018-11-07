@@ -29,7 +29,7 @@ her what we need. Current info (as of 2014 June 11):
 - Fax:   604-464-5056
 - Email: cneff@coca-cola.com
 
-As she is often not in the office, it's best to call her cell.
+As Chantelle is often not in the office, it is best to call her cell (**604-830-4022**).
 
 ### How much?
 Depends on the week. Max capacity in the cabinet is:
