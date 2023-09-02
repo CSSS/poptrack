@@ -50,3 +50,34 @@ Depends on the week. Max capacity in the cabinet is:
 | Overflow   | 5      |
 | ---------- | ------ |
 | Water      | 4      |
+
+### Website Functionality
+- This website is effectively a thin wrapper around an sqlite db
+- You may add different kinds of pops, different columns (in the pop machine), and track when pop is stored in the cupboard & the pop machine
+
+### Setup Instructions (September 2023)
+- Install python 3.3
+  - `wget http://www.python.org/ftp/python/3.3.5/Python-3.3.5.tar.xz`
+  - `tar xJf ./Python-3.3.5.tar.xz`
+  - `cd ./Python-3.3.5`
+  - `./configure --prefix=/opt/python3.3`
+  - `make && sudo make install`
+  - `curl -o get-pip.py https://bootstrap.pypa.io/pip/3.3/get-pip.py`
+  - `/opt/python3.3/bin/python3.3 get-pip.py`
+  - if you have issues with ssl, install openssl & compile python with that:
+    - `curl https://www.openssl.org/source/openssl-1.0.2g.tar.gz | tar xz && cd openssl-1.0.2g && ./config shared --prefix=/usr/local/ && make && make install`
+    - `su -` or on wsl, do `wsl -u root` from powershell
+    - `export LDFLAGS="-L/usr/local/lib/"`
+    - `export LD_LIBRARY_PATH="/usr/local/lib/"`
+    - `export CPPFLAGS="-I/usr/local/include -I/usr/local/include/openssl"`
+    - `apt-get update`
+    - `apt-get install build-essential checkinstall -y`
+    - `apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev -y`
+    - `make`
+    - `make install`
+- `rm get-pip.py`
+- `cd <your-dir>/poptrack`
+- `/opt/python3.3/bin/python3.3 -m pip install -r requirements.txt` // must be done in root
+- `/opt/python3.3/bin/python3.3 manage.py syncdb`
+- `/opt/python3.3/bin/python3.3 manage.py migrate`
+- `/opt/python3.3/bin/python3.3 manage.py runserver localhost:8000` // go to http://localhost:8000/
